@@ -1,0 +1,52 @@
+{
+    "$id": "https://github.com/mpdn/github-json-schemas/schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Schema",
+    "type": "object",
+    "required": [
+        "id",
+        "content",
+        "usages"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "The ID of the schema."
+        },
+        "content": {
+            "type": "string",
+            "description": "The contents of the schema."
+        },
+        "usages": {
+            "type": "array",
+            "items": {
+                "title": "Usage",
+                "type": "object",
+                "required": [
+                    "repo_name",
+                    "ref",
+                    "path",
+                    "license"
+                ],
+                "properties": {
+                    "repo_name": {
+                        "type": "string",
+                        "description": "The repository name using the file."
+                    },
+                    "ref": {
+                        "type": "string",
+                        "description": "The branch or tag referencing the file."
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "The path of the file within the repository."
+                    },
+                    "license": {
+                        "type": "string",
+                        "description": "The license of the repository."
+                    }
+                }
+            }
+        }
+    }
+}
